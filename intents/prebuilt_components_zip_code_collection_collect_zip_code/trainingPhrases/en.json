@@ -1,0 +1,419 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I think the zip code is "
+    }, {
+      "text": "30024",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my zip code is ",
+      "auto": true
+    }, {
+      "text": "27334",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The zip code reads ",
+      "auto": true
+    }, {
+      "text": "12354",
+      "parameterId": "zip_code"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Sure, that's ",
+      "auto": true
+    }, {
+      "text": "12366",
+      "parameterId": "zip_code"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5"
+    }, {
+      "text": " digit zip code is "
+    }, {
+      "text": "12345",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "0503",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12346",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12345",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i think it's ",
+      "auto": true
+    }, {
+      "text": "1.3",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    }, {
+      "text": "445",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "34567",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "34 343",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1 2 45",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "7",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "   ",
+      "auto": true
+    }, {
+      "text": "4",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "   ",
+      "auto": true
+    }, {
+      "text": "5 6",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12453",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "zip is "
+    }, {
+      "text": "12345",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "##@"
+    }, {
+      "text": "2",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": ". "
+    }, {
+      "text": "3 89",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "23349",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "35661",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12475",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "79494",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "72826",
+      "parameterId": "zip_code"
+    }, {
+      "text": " this is my zip code "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "66666",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": " here is the zip code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5555.5",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": " is the zip code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is "
+    }, {
+      "text": "12 3",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "56",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is "
+    }, {
+      "text": "12",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": ". "
+    }, {
+      "text": "453",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "92 934",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "45 667",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1,3497",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "334,69",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here is my zip code: "
+    }, {
+      "text": "12 387",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you confirm the zip code? It's "
+    }, {
+      "text": "44 5 91",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Just to confirm, the zip code is "
+    }, {
+      "text": "87286",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 5 digit code is "
+    }, {
+      "text": "77777",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my zip code is "
+    }, {
+      "text": "86 280",
+      "parameterId": "zip_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "zip code is "
+    }, {
+      "text": "29000",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "32914",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "  is the zip code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "@#"
+    }, {
+      "text": "1123",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "7   4",
+      "parameterId": "zip_code",
+      "auto": true
+    }, {
+      "text": "@@"
+    }, {
+      "text": "674",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123456",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

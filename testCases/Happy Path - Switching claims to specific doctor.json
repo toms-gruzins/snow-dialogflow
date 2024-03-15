@@ -1,0 +1,255 @@
+{
+  "name": "43596fae-0cc1-4e3b-963b-fd7ea0bb11c5",
+  "tags": [ "#switchingtodoctor" ],
+  "displayName": "Happy Path - Switching claims to specific doctor",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Default Landing",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi, I'm your virtual healthcare agent. I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Claims"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "healthcare.initialize_claims"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you understand your healthcare claims.\n\nPlease note, if this is a medical emergency, go to your local emergency room." ]
+      }, {
+        "text": [ "\nWhat is your member ID?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "abc123"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Oct 22 1998"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I was able to locate your most recent claim with the date of service March 25, 2020 and total amount of $122.32.\n\nThe current status of the claim is processed.\n\nDo you require more assistance?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "i want to see someone for primary care"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "type_of_doctor": "primary care"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.find_doctor"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you find a doctor.\n\nPlease note, if this is a medical emergency, go to your local emergency room.\n\n" ]
+      }, {
+        "text": [ "Who is the primary subscriber?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "me"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "primary_subscriber": "self",
+        "type_of_doctor": "primary care"
+      },
+      "currentPage": {
+        "name": "Type of Doctor Confirmation",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "To confirm, you would like to see a doctor for primary care?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "primary_subscriber": "self",
+        "type_of_doctor": "primary care"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Primary, Specialist and Mental",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "We can set you up with a virtual visit if you’d like to be seen today. \n\nYour plan includes access to virtual visits at no charge to you after you’ve met your deductible or for a flat $50 before that. \n\nYou can either meet the virtual provider now or schedule an appointment as per your convenience. Please specify the day and time you want to schedule an appointment.\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "now"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "primary_subscriber": "self",
+        "type_of_doctor": "primary care"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.free_now"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Great, you can visit livehealthonline.com/google to set up an account and you’ll be connected with a provider. This process typically takes less than 10 minutes. I can also transfer you to an agent who can assist.\n\nDo you have any other questions before I transfer you?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607082619,
+    "nanos": 594977000
+  }
+}

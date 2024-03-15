@@ -1,0 +1,54 @@
+{
+  "name": "251ad2f6-80ba-438f-bcd6-e87a7c64586d",
+  "tags": [ "#RandomQuestion" ],
+  "displayName": "Error Handling - Random question",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "jhggj"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, I am here to answer your questions about your healthcare claims, understanding your benefits and finding a doctor." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sbdjvkjsd"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Start Page",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Sorry, I was unable to understand that, I am your Healthcare assistant. I can assist you in healthcare claims, benefits coverage and help you to find a doctor." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607088406,
+    "nanos": 847674000
+  }
+}

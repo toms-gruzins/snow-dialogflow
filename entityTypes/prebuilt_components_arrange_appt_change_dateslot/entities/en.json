@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "date",
+    "synonyms": [ "adjust date", "alter meeting date", "change appointment date", "change date", "date", "modify date", "move date", "reschedule date", "shift date", "update date" ],
+    "languageCode": "en"
+  }, {
+    "value": "slot",
+    "synonyms": [ "alter time", "at the same time", "change slot", "change time", "clock hour", "clock time", "corresponding date", "corresponding day", "edit time", "equivalent day", "modify time", "on the same day", "reschedule time", "same date", "same day", "shift time", "slot", "update slot", "update time", "current date" ],
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "473d5f3e-3364-40f8-bda1-80383039fc4d",
+  "displayName": "\u003e collect appointment type video or phone",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.appointment_type",
+      "required": true,
+      "entityType": "@prebuilt_components_arrange_appt_type_videophone",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Are you looking for a phone or video call appointment with one of our branch representatives?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Are you looking for a phone or video call appointment with one of our branch representatives?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "817745b0-7c50-4243-9430-8a32e8ffae24"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Are you looking for a phone or video call appointment with one of our branch representatives?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "cf2daf98-eb46-4056-9e77-4097c8fc2a1a"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "66d4ac43-0066-43b7-8b8a-2deef8737ea0"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn’t get that. Are you looking for a phone or video call appointment with one of our branch representatives?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "2b719612-027e-44e3-9408-58ac90922585"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. Are you looking for a phone or video call appointment with one of our branch representatives?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "47be9676-3a63-420d-9f6e-b9bda9095a17"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "9e6ff388-1f63-488d-bb88-cef1e7882ed2"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "57654bb0-38cd-4413-b7ee-7881d577cecc"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "24a6d73a-eae2-4a8e-af8b-2edace31212f"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect preferred date",
+    "name": "11747af7-7df8-4453-ab7c-015e0cc97ed7"
+  } ]
+}

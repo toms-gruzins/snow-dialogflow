@@ -1,0 +1,260 @@
+{
+  "name": "df193296-e167-4599-bcc2-2299691c2462",
+  "tags": [ "#NearLocation#Twice" ],
+  "displayName": "Happy Path - User asks to find the near by location twice",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi, I need to find a doctor"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "healthcare.initialize_doctor"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you find a doctor and answer your billing questions.\n\nPlease note, if this is a medical emergency, go to your local emergency room.\n\n" ]
+      }, {
+        "text": [ "What is your member ID?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "My member ID is 1234GE"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "member_id": "1234GE"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "My birthday is October 22 1982."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Who is the primary subscriber?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "It's my husband"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE",
+        "primary_subscriber": "spouse"
+      },
+      "currentPage": {
+        "name": "Type of Doctor",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "What type of doctor would you like to see?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I’d like to see someone for vision service"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE",
+        "primary_subscriber": "spouse",
+        "type_of_doctor": "vision"
+      },
+      "currentPage": {
+        "name": "Type of Doctor Confirmation",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "To confirm, you would like to see a doctor for vision?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "That’s right"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE",
+        "primary_subscriber": "spouse",
+        "type_of_doctor": "vision"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Other than Primary, Specialist and Mental",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "I see your address on file is 1600 Amphitheatre Pkwy, Mountain View, CA 94043, United States. Would you like to search nearby? " ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes i would like to search nearby"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE",
+        "primary_subscriber": "spouse",
+        "type_of_doctor": "vision"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "Nearby Home Address",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "The nearest vision provider is at 580 N Rengstorff Ave Suite E, Mountain View, CA 94043, United States. Would you like me to find another location?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Yes i want to see one more address"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "1234GE",
+        "primary_subscriber": "spouse",
+        "type_of_doctor": "vision"
+      },
+      "triggeredIntent": {
+        "name": "small_talk.confirmation.yes"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "A customer care representative will be better able to help you. Let me transfer your call." ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607091652,
+    "nanos": 688950000
+  }
+}

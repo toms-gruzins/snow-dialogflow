@@ -1,0 +1,199 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "appointment "
+    }, {
+      "text": "date",
+      "parameterId": "change_dateslot",
+      "auto": true
+    }, {
+      "text": " on "
+    }, {
+      "text": "14th June",
+      "auto": true
+    }, {
+      "text": " and "
+    }, {
+      "text": "slot",
+      "parameterId": "change_dateslot",
+      "auto": true
+    }, {
+      "text": " at "
+    }, {
+      "text": "2PM",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "slot",
+      "parameterId": "change_dateslot",
+      "auto": true
+    }, {
+      "text": " at "
+    }, {
+      "text": "4 PM",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change my appointment "
+    }, {
+      "text": "date",
+      "parameterId": "change_dateslot"
+    }, {
+      "text": " to 24th December"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want "
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " select "
+    }, {
+      "text": "slot",
+      "parameterId": "change_dateslot",
+      "auto": true
+    }, {
+      "text": " for "
+    }, {
+      "text": "10 AM",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "10 am",
+      "parameterId": "time"
+    }, {
+      "text": " is the best time "
+    }, {
+      "text": "for",
+      "auto": true
+    }, {
+      "text": " me"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you reschedule for "
+    }, {
+      "text": "12.30 pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I prefer "
+    }, {
+      "text": "4 PM",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I will choose the "
+    }, {
+      "text": "4pm",
+      "parameterId": "time"
+    }, {
+      "text": " time slot."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'm happy to meet at "
+    }, {
+      "text": "4pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2pm",
+      "parameterId": "time"
+    }, {
+      "text": " works for me."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'm good with "
+    }, {
+      "text": "3pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I will go with "
+    }, {
+      "text": "10",
+      "parameterId": "time"
+    }, {
+      "text": " in the morning"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change the time to "
+    }, {
+      "text": "3:30 pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "update the time to "
+    }, {
+      "text": "09:30 AM",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "lets go with "
+    }, {
+      "text": "12 30 pm",
+      "parameterId": "time"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you do "
+    }, {
+      "text": "4pm",
+      "parameterId": "time"
+    }, {
+      "text": " instead"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

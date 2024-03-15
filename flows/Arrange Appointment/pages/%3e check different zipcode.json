@@ -1,0 +1,119 @@
+{
+  "name": "4da10009-073a-45c7-98b1-0ba203602e2f",
+  "displayName": "\u003e check different zipcode",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you want to schedule your appointment with a different zip code?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$session.params.different_zipcode_retry_counter \u003c $flow.max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "different_zipcode_retry_counter",
+        "value": "$sys.func.ADD($session.params.different_zipcode_retry_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect zipcode",
+    "name": "8728d21d-e3f0-49a3-92a3-586e857f4de7"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect other appointment type phone or video",
+    "name": "f76fdd91-fa02-4697-bd85-bc3435a166f2"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "3ebefd76-b521-403e-b993-d000c2744d16"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "0c11ab6e-6b23-4542-8308-67c8439e06e9"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Do you want to schedule your appointment with a different zip code?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e484950b-da90-4faf-bd84-ce59cfe5862d"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Do you want to schedule your appointment with a different zip code?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1b50cfdc-1e13-4e54-9d87-81c966dfacb4"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Do you want to schedule your appointment with a different zip code?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "849f47cf-8b80-49cd-9e19-e2dde13bc42e"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Do you want to schedule your appointment with a different zip code?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1dc60830-e5f6-4ba1-9d85-8443ada156cb"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "4529a67b-25fc-4150-97d6-8a0e820f3c54"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "e36d6866-b33f-488d-9948-2c3fbae1156a"
+  } ]
+}

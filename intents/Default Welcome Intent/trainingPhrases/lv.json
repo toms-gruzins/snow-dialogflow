@@ -1,0 +1,75 @@
+{
+  "trainingPhrases": [ {
+    "id": "5204b5b4-24a1-4bb3-8d8f-ab5ada56b359",
+    "parts": [ {
+      "text": "jauka diena, vai ne",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "25a4cdb6-404e-402a-b152-78b3d05a8936",
+    "parts": [ {
+      "text": "Sveiks",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "4babf941-fb2f-4a77-89f1-054bda403df1",
+    "parts": [ {
+      "text": "Sveiki",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "16aafd83-a953-45e4-9159-1ac4e9ef5290",
+    "parts": [ {
+      "text": "tikai teikšu sveiki",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "8e4307e2-0826-472e-a49d-8bf1fd3437c6",
+    "parts": [ {
+      "text": "Sveiks atkal",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "78073d24-5fdd-4107-a71e-434ecb6d678e",
+    "parts": [ {
+      "text": "laba diena",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "90a727a9-af3b-4c0a-a654-8e49d281588f",
+    "parts": [ {
+      "text": "ilgi neesi redzēts",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "978f383a-bc03-4821-8281-a2692998780e",
+    "parts": [ {
+      "text": "čau",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  }, {
+    "id": "4b15bfde-25f3-474c-870d-44f069318d23",
+    "parts": [ {
+      "text": "sveicieni",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "lv"
+  } ]
+}

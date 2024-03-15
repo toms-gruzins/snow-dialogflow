@@ -1,0 +1,144 @@
+{
+  "name": "75e50dcb-8c4e-4ec6-8550-38f87522b466",
+  "displayName": "\u003e book another appointment",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you want to book another appointment?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.appointment_type",
+        "value": null
+      }, {
+        "parameter": "$flow.appointment_reason",
+        "value": null
+      }, {
+        "parameter": "$flow.preferred_date",
+        "value": null
+      }, {
+        "parameter": "$flow.preferred_slot",
+        "value": null
+      }, {
+        "parameter": "$flow.available_slots",
+        "value": null
+      }, {
+        "parameter": "$flow.available_slot_ssml",
+        "value": ""
+      } ]
+    },
+    "targetPage": "\u003e collect appointment reason",
+    "name": "fc4baed5-b4e9-49e8-a9c1-502ae6d91316"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thanks for connecting with us. Have a nice day!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "c9d6426a-5174-4356-8447-41dd1b038381"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "ebeb4470-5e5a-4297-b087-1d8b07e3de83"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thanks for connecting with us. Have a nice day!" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "c5c42231-79e8-44e3-b8aa-9782a17a8962"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Do you want to book another appointment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fef6962d-d253-4d0f-bfc1-cb94c317fd30"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Do you want to book another appointment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "476fdc4a-91e5-42cf-b424-3ada239fe3ca"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "67809254-1fbc-403d-bb37-30e9cb4c7a67"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Do you want to book another appointment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cdad0873-859e-4e81-be20-4666d8b7f19d"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Do you want to book another appointment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7053b88c-d649-4c75-92ec-14132dd1961a"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "fdade4b0-6c7f-44ba-8c22-148cf2196e56"
+  } ]
+}

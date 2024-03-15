@@ -1,0 +1,240 @@
+{
+  "name": "cef8c4ae-efcd-4e13-abd7-a2eb62d19163",
+  "tags": [ "#nomatch#liveagent" ],
+  "displayName": "Error Handling - three no matches on live agent page in claims flow",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Default Landing",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi, I'm your virtual healthcare agent. I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "claims"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "healthcare.initialize_claims"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you understand your healthcare claims.\n\nPlease note, if this is a medical emergency, go to your local emergency room." ]
+      }, {
+        "text": [ "\nWhat is your member ID?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "abc123"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "oct 22 1998"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I was able to locate your most recent claim with the date of service March 25, 2020 and total amount of $122.32.\n\nThe current status of the claim is processed.\n\nDo you require more assistance?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "amount seems high"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.out_of_scope_claims"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I can connect you to someone who can help you with that.\n\nDo you have any other questions before I transfer you?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hsbdfbsdf"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "ksjdfbsdf"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, I did not understand that. I can help answer your healthcare claim questions, understand your benefits, and assist you in finding a doctor. How may I help you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "ksdbfdsf"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, a customer service representative will be better able to help you. Let me transfer your call. Thank you for your patience." ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607526426,
+    "nanos": 569615000
+  }
+}

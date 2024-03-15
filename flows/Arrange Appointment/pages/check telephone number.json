@@ -1,0 +1,49 @@
+{
+  "name": "64727e5c-7cb7-416a-b5dc-135ba4a73f2a",
+  "displayName": "check telephone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.telephone_number_collection_telephone_number = null OR $session.params.telephone_number_collection_telephone_number = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Telephone Number Collection",
+    "name": "8e5fde27-6e95-4add-97fb-8baf0f5889dd"
+  }, {
+    "condition": "$session.params.telephone_number_collection_telephone_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$session.params.telephone_number_collection_telephone_number"
+      }, {
+        "parameter": "telephone_number_collection_telephone_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e check phone number API",
+    "name": "c2c39e4f-05de-4fc7-8f58-e0cedfbfa151"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "121e7fe8-def3-4112-954f-fc79382eb69a"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "name": "f980764a-c7ed-4bbe-96c4-d2e6182f7aaa"
+  } ]
+}

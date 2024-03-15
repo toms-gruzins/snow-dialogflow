@@ -1,0 +1,27 @@
+{
+  "entities": [ {
+    "value": "open account",
+    "synonyms": [ "account opening", "begin account", "create account", "joint account", "new account", "open account", "set up an account", "sign up", "sign up as member" ],
+    "languageCode": "en"
+  }, {
+    "value": "savings",
+    "synonyms": [ "account closure", "account for savings", "basic banking", "checking ", "checking account", "close account", "current account", "debit account", "deposit", "everyday account", "money saver", "nest egg", "operational account", "savings", "savings account", "savings fund", "savings plan", "savings scheme", "transaction account" ],
+    "languageCode": "en"
+  }, {
+    "value": "cards",
+    "synonyms": [ "apply for credit card", "ATM card", "bank card", "card", "cards", "contactless cards", "credit", "credit card", "credit card application", "credit card request", "debit", "debit card", "EMV chip card", "Magnetic Stripe cards", "payment card" ],
+    "languageCode": "en"
+  }, {
+    "value": "loans",
+    "synonyms": [ "apply for education loan", "apply for loan", "auto loan", "borrowing", "business loan", "car loan", "consumer loan", "debt", "debt management", "home equity", "home equity loan", "home loan consultation", "lending", "line of credit", "loan", "loan application", "loan request", "loans", "mortgage", "mortgage inquiry", "mortgage loan", "personal loan", "repayment", "student loan", "vehicle loan" ],
+    "languageCode": "en"
+  }, {
+    "value": "wealth",
+    "synonyms": [ "asset allocation", "asset management", "estate", "estate planning", "finance", "financial consultant", "financial planning", "high net worth services", "invenstment management", "investment advisory", "legal", "money manager", "notary services", "portfolio management", "private banking", "tax", "wealth", "wealth advisor", "wealth management", "wealth planning", "wealth preservation" ],
+    "languageCode": "en"
+  }, {
+    "value": "other",
+    "synonyms": [ "account safety", "borrowing cost", "bounce protection", "claim", "complaints", "currency exchange", "demat", "digital banking", "dispute", "e-banking", "electronic banking", "electronic funds transfer", "exchange foreign currency", "forex services", "grievance", "information request", "interest rate", "internet banking", "mobile payment", "net banking", "online transaction", "other", "overdraft coverage", "plan for retirement", "rate of return", "retirement planning", "transaction disputes", "upi", "UPI payment", "wallet payment", "inquiry assistance" ],
+    "languageCode": "en"
+  } ]
+}

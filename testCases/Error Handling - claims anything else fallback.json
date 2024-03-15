@@ -1,0 +1,182 @@
+{
+  "name": "ceca739f-bfd1-422a-bc8e-e0c455b968b8",
+  "tags": [ "#EH" ],
+  "displayName": "Error Handling - claims anything else fallback",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "claims"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "healthcare.initialize_claims"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you understand your healthcare claims.\n\nPlease note, if this is a medical emergency, go to your local emergency room." ]
+      }, {
+        "text": [ "\nWhat is your member ID?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "abc123"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Oct 22 1998"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I was able to locate your most recent claim with the date of service March 25, 2020 and total amount of $122.32.\n\nThe current status of the claim is processed.\n\nDo you require more assistance?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "kjdbsfds"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "I am here to answer your questions about your healthcare claims, understanding your benefits and finding a doctor. How may I help you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "khsdfbdsf"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, I did not understand that. I can help answer your healthcare claim questions, understand your benefits, and assist you in finding a doctor. How may I help you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "khdsbfdsf"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Claim Status"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, a customer service representative will be better able to help you. Let me transfer your call. Thank you for your patience." ]
+      } ],
+      "currentFlow": {
+        "name": "Claim Status"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607083343,
+    "nanos": 627360000
+  }
+}

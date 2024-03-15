@@ -1,0 +1,63 @@
+{
+  "name": "678416d2-8461-4a97-8988-6a46697a63ff",
+  "displayName": "\u003e collect zipcode",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.different_zipcode_retry_counter = $flow.max_retry_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "bb87a07e-642c-4ecb-a660-9351e7948f82"
+  }, {
+    "condition": "$session.params.confirm_branch_counter = $flow.max_retry_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "b01e1565-2c38-4e09-9ff8-ff6fec26eb76"
+  }, {
+    "condition": "$session.params.zip_code_collection_zip_code = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Zip Code Collection",
+    "name": "d1a702f2-4b37-4643-ac0a-98619318ad5b"
+  }, {
+    "condition": "$session.params.zip_code_collection_zip_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.zip_code",
+        "value": "$session.params.zip_code_collection_zip_code"
+      }, {
+        "parameter": "zip_code_collection_zip_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e locate nearby branch API",
+    "name": "74b3ebcf-9e7b-4e02-bf4f-c3aacaeb5eaa"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "dc84ca26-2fc6-40db-a519-2eda973eeb97"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "name": "019f5880-1350-4944-9d31-be74c59a3579"
+  } ]
+}

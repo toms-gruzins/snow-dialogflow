@@ -1,0 +1,31 @@
+{
+  "name": "6ed8e017-b61d-4610-8766-366239057e40",
+  "displayName": "check auth level",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level \u003c 0 OR $session.params.auth_level = null OR $session.params.auth_level = \"\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$request.payload.telephony.caller_id"
+      }, {
+        "parameter": "converted_number",
+        "value": "$sys.func.TO_TEXT($sys.func.TO_NUMBER($session.params.phone_number))"
+      } ]
+    },
+    "targetPage": "validate phone number",
+    "name": "efd25a6c-da15-4819-a895-c1164d2dd110"
+  }, {
+    "condition": "$session.params.auth_level \u003e= 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e fetch account details API",
+    "name": "ebf6c937-91fb-4458-bc84-ad6b03432ebe"
+  } ]
+}

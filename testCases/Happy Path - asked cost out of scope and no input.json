@@ -1,0 +1,184 @@
+{
+  "name": "7b78328b-1c97-4a37-9f56-0a83358f6762",
+  "tags": [ "#costnoinput" ],
+  "displayName": "Happy Path - asked cost out of scope and no input",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Default Landing",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi, I'm your virtual healthcare agent. I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "cost of xray"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "costs_of_coverage_category": "diagnostic imaging"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.costs_of_coverage_category"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you find a doctor and answer your billing questions.\n\nPlease note, if this is a medical emergency, go to your local emergency room.\n\n" ]
+      }, {
+        "text": [ "What is your member ID?\n" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "abc123"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "costs_of_coverage_category": "diagnostic imaging",
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Oct 22 1998"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "costs_of_coverage_category": "diagnostic imaging",
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Who is the primary subscriber?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "me"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "primary_subscriber": "self"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Actual charges may vary among providers, but for your in network provider you pay 10% after the plan deductible is met and for your out of network provider you pay 10% after the plan deductible is met. You also have access to mental health services via our partner Lyra. \n\nDo you require more assistance?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "cost of house"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1998
+        },
+        "member_id": "abc123",
+        "primary_subscriber": "self"
+      },
+      "currentPage": {
+        "name": "Anything Else",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "I am here to answer your questions about your healthcare claims, understanding your benefits and finding a doctor. How may I help you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607085623,
+    "nanos": 470566000
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "name": "0f9d658b-f438-453b-8c68-973d230cd1f4",
+  "tags": [ "#defaultliveagent" ],
+  "displayName": "Error Handling - default live agent ",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Default Landing",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi, I'm your virtual healthcare agent. I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "how can I pay for my chemo"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "out_of_scope": "out of scope"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.out_of_scope_questions"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "I’m sorry I can’t answer this particular question. Would you like me to transfer you to someone who can help?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "dsffsad"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "out_of_scope": "out of scope"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, I cannot answer that. Would you like me to transfer your call to someone who can help?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sdfds"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "out_of_scope": "out of scope"
+      },
+      "currentPage": {
+        "name": "Live Agent",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Sorry, I did not understand that. Do you want me to transfer your call to someone who can help" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "sdfdsdfg"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "out_of_scope": "out of scope"
+      },
+      "currentPage": {
+        "name": "End Session",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Apologies, a customer service representative will be better able to help you. Let me transfer your call. Thank you for your patience." ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607081699,
+    "nanos": 860250000
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "defaultLanguageCode": "en",
+  "supportedLanguageCodes": [ "lv" ],
+  "timeZone": "America/Los_Angeles",
+  "enableLogging": true,
+  "projectNumber": 760312345631,
+  "speechToTextSettings": {
+    "enableSpeechAdaptation": true
+  },
+  "startFlow": "Default Start Flow",
+  "enableSpellCorrection": true,
+  "advancedSettings": {
+    "enabled": true,
+    "audioExportGcsDestination": {
+    
+    },
+    "speechSettings": {
+      "endpointerSensitivity": 50,
+      "noSpeechTimeout": {
+        "seconds": 5
+      },
+      "models": [ {
+        "key": "en",
+        "value": "phone_call"
+      }, {
+        "key": "lv",
+        "value": "phone_call"
+      } ]
+    },
+    "playbackInterruptionSettings": {
+    
+    },
+    "loggingSettings": {
+      "enableInteractionLogging": true
+    }
+  },
+  "speakerIdSettings": {
+  
+  },
+  "textToSpeechSettings": {
+    "synthesizeSpeechConfigs": [ {
+      "key": "lv",
+      "value": {
+        "voice": {
+          "name": "lv-LV-Standard-A",
+          "ssmlGender": "SSML_VOICE_GENDER_MALE"
+        }
+      }
+    } ]
+  },
+  "duplexSettings": {
+  
+  },
+  "callCompanionSettings": {
+    "company": "SupportNow"
+  },
+  "answerFeedbackSettings": {
+  
+  },
+  "webClientSettings": {
+    "displayName": "SupportNow"
+  }
+}

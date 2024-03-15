@@ -1,0 +1,215 @@
+{
+  "name": "ec162fda-bfd2-4fd5-b250-c1663a2ecf2c",
+  "tags": [ "#Alternativemedicine" ],
+  "displayName": "Error Handling - Alternative Medicine",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Hi,"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Default Landing",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Hi, I'm your virtual healthcare agent. I can help answer your healthcare claims questions, understand your benefits, and find a doctor. How can I assist you today?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "what are my benefits"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "benefits": ""
+      },
+      "triggeredIntent": {
+        "name": "healthcare.initialize_benefits"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Benefits"
+      },
+      "textResponses": [ {
+        "text": [ "I am happy to help you understand your benefits.\n\n" ]
+      }, {
+        "text": [ "What is your member ID?" ]
+      } ],
+      "currentFlow": {
+        "name": "Benefits"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "\"My member ID is 123456 \""
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "benefits": ""
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Benefits"
+      },
+      "textResponses": [ {
+        "text": [ "Please provide a valid member ID consisting of numbers and letters." ]
+      } ],
+      "currentFlow": {
+        "name": "Benefits"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "\"My member ID is 123456"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "benefits": "",
+        "member_id": "123456"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Benefits"
+      },
+      "textResponses": [ {
+        "text": [ "What is your date of birth? You can say the date as October 22 ,1982." ]
+      } ],
+      "currentFlow": {
+        "name": "Benefits"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "My birthday is October 22 1982."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "benefits": "",
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "123456"
+      },
+      "currentPage": {
+        "name": "Member Details",
+        "flow": "Benefits"
+      },
+      "textResponses": [ {
+        "text": [ "Who is the primary subscriber?" ]
+      } ],
+      "currentFlow": {
+        "name": "Benefits"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "It's my husband"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "123456",
+        "primary_subscriber": "spouse"
+      },
+      "currentPage": {
+        "name": "Benefit Services",
+        "flow": "Benefits"
+      },
+      "textResponses": [ {
+        "text": [ "Is there a particular part of your benefits you’d like to hear about? You can ask me about your deductible, co-insurance, out of pocket maximums, and covered services. " ]
+      } ],
+      "currentFlow": {
+        "name": "Benefits"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Do you cover alternative medicine?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "sessionParameters": {
+        "date_of_birth": {
+          "day": 22,
+          "month": 10,
+          "year": 1982
+        },
+        "member_id": "123456",
+        "primary_subscriber": "spouse",
+        "type_of_doctor": "alternative medicine"
+      },
+      "triggeredIntent": {
+        "name": "healthcare.find_doctor"
+      },
+      "currentPage": {
+        "name": "Type of Doctor Confirmation",
+        "flow": "Find a Doctor"
+      },
+      "textResponses": [ {
+        "text": [ "Sure, I can help you find a doctor.\n\nPlease note, if this is a medical emergency, go to your local emergency room.\n\n" ]
+      }, {
+        "text": [ "To confirm, you would like to see a doctor for alternative medicine?" ]
+      } ],
+      "currentFlow": {
+        "name": "Find a Doctor"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1607085103,
+    "nanos": 79897000
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "name": "799b17db-157b-428b-a739-579228e7ad30",
+  "displayName": "\u003e confirm branch address",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.zip_code != null",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, do you want to schedule an appointment in the branch closest to \u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.zip_code != null AND \u0026\u0026 AND $flow.existing_customer = \"true\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, do you want to schedule an appointment in the branch associated with your account, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, do you want to schedule an appointment in the branch located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect preferred date",
+    "name": "7f6a507f-3ddb-4197-8bc9-87631c892b9e"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$session.params.confirm_branch_counter \u003c $flow.max_retry_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.zipcode",
+        "value": null
+      }, {
+        "parameter": "confirm_branch_counter",
+        "value": "$sys.func.ADD($session.params.confirm_branch_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect zipcode",
+    "name": "8ff2081d-ad94-4f89-97d1-810d1f2c422e"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "9c45cfd8-7c70-46b9-b3f7-e6ac95e142d6"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d3f7c7b2-b2bc-4fdf-b14e-d0d6bec272fe"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.existing_customer = \"true\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we were not able to hear you. Okay, do you want to schedule an appointment in the branch associated with your account, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we were not able to hear you. Okay, do you want to schedule an appointment in the branch located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "d2b10e6c-332e-4117-bd75-c938046f6747"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.existing_customer = \"true\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eHmm, we still cannot hear you. Okay, do you want to schedule an appointment in the branch associated with your account, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eHmm, we still cannot hear you. Okay, do you want to schedule an appointment in the branch located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "767876a7-79a3-45de-bb87-ee74154c22a5"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "891f3866-a41e-4384-b88d-c1e74c8b3808"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.existing_customer = \"true\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we didn’t get that. Okay, do you want to schedule an appointment in the branch associated with your account, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we didn’t get that. Okay, do you want to schedule an appointment in the branch located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "e186c132-aaa6-429d-8c13-3b827265def4"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.existing_customer = \"true\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we're still not getting that. Okay, do you want to schedule an appointment in the branch associated with your account, located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we're still not getting that. Okay, do you want to schedule an appointment in the branch located at \u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_street_number\u003c/say-as\u003e,$flow.branch_street_address, $flow.branch_city,\u003csay-as interpret-as=\"verbatim\"\u003e$flow.branch_zip_code\u003c/say-as\u003e?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "203eb573-28f5-42f7-95fc-77391ee37f2d"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "a75deb0e-e5bb-41dd-9ad7-c298ce08b2ae"
+  } ],
+  "description": "Conditional response added in Entry fulfillment for new and existing customer"
+}

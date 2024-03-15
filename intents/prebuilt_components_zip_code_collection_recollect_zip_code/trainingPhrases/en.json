@@ -1,0 +1,217 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Please change the zip code to "
+    }, {
+      "text": "72292",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can someone assist me to change my zip code to "
+    }, {
+      "text": "89332",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the zip code captured is invalid.Valid zip is ",
+      "auto": true
+    }, {
+      "text": "82383",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code captured by you is wrong.The correct one is ",
+      "auto": true
+    }, {
+      "text": "72235",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "modify the zip as ",
+      "auto": true
+    }, {
+      "text": "04324",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "29023",
+      "parameterId": "zip_code"
+    }, {
+      "text": " can be my accurate zip code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no that's not correct.The zip code is "
+    }, {
+      "text": "38343",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no please recollect the zip code as ",
+      "auto": true
+    }, {
+      "text": "28334",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "28434",
+      "parameterId": "zip_code"
+    }, {
+      "text": " is my new zip code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "sorry zip code collected is wrong.It is ",
+      "auto": true
+    }, {
+      "text": "89292",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please recollect the zip code as ",
+      "auto": true
+    }, {
+      "text": "79744",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It is "
+    }, {
+      "text": "47545",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no zip code is "
+    }, {
+      "text": "3822",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no it is "
+    }, {
+      "text": "2.3922",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 5 digit zip code is "
+    }, {
+      "text": "22212",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "five",
+      "auto": true
+    }, {
+      "text": " digit zip code is ",
+      "auto": true
+    }, {
+      "text": "72991",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "corrected zip code is "
+    }, {
+      "text": "1.2371",
+      "parameterId": "zip_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no zip code is invalid, collect zip code as ",
+      "auto": true
+    }, {
+      "text": "82322",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "not.correct. Correct zip code is ",
+      "auto": true
+    }, {
+      "text": "2.3832",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change zip code to "
+    }, {
+      "text": "92293",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no change zip code to ",
+      "auto": true
+    }, {
+      "text": "12392",
+      "parameterId": "zip_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

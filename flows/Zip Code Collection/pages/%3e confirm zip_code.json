@@ -1,0 +1,252 @@
+{
+  "name": "78d7fdd4-76b6-4710-880a-2e460c8d888e",
+  "displayName": "\u003e confirm zip_code",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eYou mentioned the zip code is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e\u003c/prosody\u003e, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003eYou mentioned the zip code is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e\u003c/prosody\u003e, is that correct?\u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get it right." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      }, {
+        "parameter": "$flow.zip_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_zip_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter the five digit zip code."
+      } ]
+    },
+    "targetPage": "\u003e collect zip_code",
+    "name": "38d5c09a-e9b1-4964-a2c0-b27244c18e16"
+  }, {
+    "intent": "prebuilt_components_zip_code_collection_invalid_zip_code",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get it right." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.zip_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_zip_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter the five digit zip code."
+      } ]
+    },
+    "targetPage": "\u003e collect zip_code",
+    "name": "590b99a5-7dbc-4a6f-a57a-7af950734d87"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "effdd232-6d0b-42d4-899f-c651d8f89231"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e6035cd9-c995-434b-be7d-8664521cd9db"
+  }, {
+    "intent": "prebuilt_components_zip_code_collection_invalid_zip_code",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "46dc0665-db12-4ec4-a72a-f38b6beebb90"
+  }, {
+    "intent": "prebuilt_components_zip_code_collection_valid_zip_code",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "0ba2efb9-a239-44bf-bbd1-8e46908356f8"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "9627834d-b99e-426f-bf32-088c2db4c175"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "d9955579-af2d-4bc8-a7dd-80b30a5bec03"
+  }, {
+    "intent": "prebuilt_components_zip_code_collection_recollect_zip_code",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.zip_code",
+        "value": "$sys.func.JOIN(\"\", $session.params.zip_code)"
+      }, {
+        "parameter": "zip_code",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      } ]
+    },
+    "targetPage": "validate zip_code",
+    "name": "f1144326-6fbb-46ef-ac1e-e800220772fe"
+  }, {
+    "intent": "prebuilt_components_zip_code_collection_recollect_zip_code",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "zip_code",
+        "value": null
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "aa4183e7-281f-417f-af34-33df47ec0d79"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "64a73779-f341-45c6-b261-4f4107336ef4"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "0a159bf2-99c2-4478-81ad-ad1a4355823d"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. You mentioned the zip code is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1378c3c3-97b9-46e5-8a37-239194ef959b"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "04e13c3c-80d8-4cfb-8e5c-81dd29731bc3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "6ab4fc8e-1fa6-42ea-a51c-8afb7a510c88"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. You mentioned the zip code to be \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "edacc85e-2de6-44e3-a581-4da97a953c27"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still wasn't able to get that. You mentioned the zip code is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.zip_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "357968e3-93f7-4608-90a1-de3ebb1ba545"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "00588ad0-84e3-438c-aa6d-a99906950dd6"
+  } ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "1bcda70d-df04-4037-adbf-0c0f05d86a37",
+  "displayName": "appointment slot check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.available_slots : $flow.preferred_slot",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm appointment",
+    "name": "e9572992-2670-45b9-8dcb-125f25de8b7e"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, the selected time slot is not available." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.slot",
+        "value": "$sys.func.ADD($flow.slot_counter,1)"
+      }, {
+        "parameter": "$flow.slot_counter",
+        "value": "$sys.func.ADD($flow.slot_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect date or slot",
+    "name": "9e2bdc59-dd80-4942-9140-d3fe50869629"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "488241c0-bacb-4fcb-a6ca-41e0308e7827",
+  "displayName": "prebuilt_components_dob_collection_collect_day",
+  "parameters": [ {
+    "id": "day",
+    "entityType": "@prebuilt_components_dob_collection_dob_day"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 22
+}

@@ -1,0 +1,28 @@
+{
+  "name": "48d07bf8-4a17-4063-a94a-18b802d7255a",
+  "displayName": "validate phone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.phone_number = $session.params.converted_number",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$sys.func.CONCATENATE($sys.func.GET_FIELD($sys.func.TO_PHONE_NUMBER($session.params.phone_number),area-code), $sys.func.GET_FIELD($sys.func.TO_PHONE_NUMBER($session.params.phone_number), number))"
+      } ]
+    },
+    "targetPage": "\u003e fetch account details API",
+    "name": "755802bb-77b3-4c77-9465-35d01d980e13"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check telephone number",
+    "name": "1ad7d529-035e-4669-ad06-c0a411578cb6"
+  } ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "3fb76d5b-6c1e-401f-bee9-09085c5a2b93",
+  "displayName": "\u003e check bank customer",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Can you please confirm if you are an existing customer of our bank?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check telephone number",
+    "name": "315dc836-f264-4e5d-843e-6b675c2f4b9a"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check telephone number",
+    "name": "4559826e-d671-4e3a-904d-ece43bc939eb"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5ee967d8-b7b9-4343-818d-87c50e3fd67b"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "45ea76df-7ab6-4fa2-84a3-1a712613de95"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Can you please confirm if you are an existing customer of our bank?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "964af1a6-1c14-4b8b-a832-d506ecf5d083"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still can't hear you. Can you please confirm if you are an existing customer of our bank?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cd44d925-1e61-4ab3-94e1-e772973c2774"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "21e57f96-339d-44e3-8727-9f454c3130f2"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Can you please confirm if you are an existing customer of our bank?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "14a917e9-31b1-4275-990d-b982cd2d3cc3"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you please confirm if you are an existing customer of our bank?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "54cd082e-137b-459b-8b20-c10b610cdd00"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "039b933b-0e2a-41e4-8418-160330e3cafc"
+  } ]
+}

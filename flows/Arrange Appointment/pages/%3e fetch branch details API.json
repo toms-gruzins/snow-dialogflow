@@ -1,0 +1,71 @@
+{
+  "name": "5cfb226c-3bee-4183-b709-4a18f935fa51",
+  "displayName": "\u003e fetch branch details API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_arrange_appointment:get_branch",
+    "tag": "getBranch"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.branch_address != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.branch_street_number",
+        "value": "$sys.func.GET($sys.func.SPLIT($flow.branch_address, \",\"),0)"
+      }, {
+        "parameter": "$flow.branch_street_address",
+        "value": "$sys.func.GET($sys.func.SPLIT($flow.branch_address, \",\"),1)"
+      }, {
+        "parameter": "$flow.branch_city",
+        "value": "$sys.func.GET($sys.func.SPLIT($flow.branch_address, \",\"),2)"
+      }, {
+        "parameter": "$flow.branch_zip_code",
+        "value": "$sys.func.GET($sys.func.SPLIT($flow.branch_address, \",\"),3)"
+      } ]
+    },
+    "targetPage": "\u003e confirm branch address",
+    "name": "10811283-f764-4bd6-8bce-9ba3ef82a940"
+  }, {
+    "condition": "$flow.branch_address = \"\" OR $flow.branch_address = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect zipcode",
+    "name": "57ac4385-4f5b-400b-95da-a3204ecd9d13"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after some time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "6d9d200f-9ac2-4a53-8bc9-052e96875189"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after some time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "49941502-0d28-4354-82d0-f7aaacf989d3"
+  } ]
+}

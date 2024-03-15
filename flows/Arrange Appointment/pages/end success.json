@@ -1,0 +1,18 @@
+{
+  "name": "2513c952-b20c-4cd2-9a6a-5c204365f289",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "c9994d27-2482-4cd6-acef-5d43b257b29a"
+  } ]
+}

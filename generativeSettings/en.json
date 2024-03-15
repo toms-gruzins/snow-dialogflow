@@ -1,0 +1,22 @@
+{
+  "fallbackSettings": {
+    "selectedPrompt": "Example"
+  },
+  "languageCode": "en",
+  "knowledgeConnectorSettings": {
+    "business": "SupportNow",
+    "agent": "Dāvis",
+    "agentIdentity": "Assistant",
+    "businessDescription": "Dental services",
+    "agentScope": "Website, phone",
+    "llmModelSettings": {
+    
+    },
+    "mainLlmConfig": {
+      "configSet": "gemini_pro"
+    }
+  },
+  "llmModelSettings": {
+    "model": "gemini-pro"
+  }
+}

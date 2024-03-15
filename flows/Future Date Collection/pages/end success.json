@@ -1,0 +1,42 @@
+{
+  "name": "9b00f24b-12ff-4c86-b123-862afa758a68",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Great, we are done with collecting your preferred date." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.day",
+      "value": "$sys.func.TO_NUMBER($flow.day)"
+    }, {
+      "parameter": "$flow.year",
+      "value": "$sys.func.TO_NUMBER($flow.year)"
+    }, {
+      "parameter": "$flow.month",
+      "value": "$sys.func.TO_NUMBER($flow.month)"
+    }, {
+      "parameter": "incorrect_part",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dob_collection_dob",
+        "value": "$sys.func.TO_OBJECT(\"{'day':'$flow.day','month':'$flow.month','year':'$flow.year'}\")"
+      }, {
+        "parameter": "dob_collection_day",
+        "value": "$sys.func.FORMAT_DATE($session.params.dob_collection_dob, \"EEEE\", \"en\")"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "f927e79c-92d4-4c6f-a894-a4ce99bbf2c0"
+  } ]
+}

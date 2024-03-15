@@ -1,0 +1,138 @@
+{
+  "name": "22bbd600-9c6c-4d52-9bce-12450d82e725",
+  "displayName": "\u003e collect appointment reason",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.appointment_reason",
+      "required": true,
+      "entityType": "@prebuilt_components_arrange_appt_reason",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Before scheduling an appointment, we will ask you a few questions. Can you tell us the reason for your appointment?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Can you tell us the reason of your appointment?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ee654b60-47dc-4cc0-9787-f2697a600ade"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Can you tell us the reason of your appointment?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f2ac3e4f-7dd6-4f14-89ea-f8ffe392f41a"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "571b5a49-3a76-40a8-b0fe-53ba559ef15b"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn’t get that. You can book an appointment for topics including opening an account, savings, cards, loans, and wealth management. Can you tell us the reason for your appointment?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "68b4e918-9181-4d8b-a681-c769a0b53cc9"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. You can book an appointment for topics including opening an account, savings, cards, loans, and wealth management. Can you tell us the reason for your appointment?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "234dbe02-7c63-42da-9d33-74b95f17a8b4"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "04c77900-e200-4f39-be1e-037f36b96070"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "0d9f229a-c6ab-478a-a44c-1d22db64301e"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "a77a5ba0-3661-4437-9267-c5025f02e6e6"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $sys.func.CONTAIN($flow.all_appointment_type, $flow.appointment_reason) = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect appointment type all",
+    "name": "28347649-8c3f-46b0-9a8f-327f4902b30f"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $sys.func.CONTAIN($flow.video_phone_appointment_type, $flow.appointment_reason) = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.branch_address",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect appointment type video or phone",
+    "name": "380de7d2-5f16-40a2-a9b7-3d9861709ed7"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.branch_address",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect appointment type phone",
+    "name": "ca20ac4e-54e5-49fb-9105-b0889b5c6140"
+  } ],
+  "description": "Parameter specific fulfillment defined."
+}

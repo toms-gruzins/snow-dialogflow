@@ -1,0 +1,65 @@
+{
+  "name": "d8a3fd6f-cbd3-4c55-a044-9a67bedea769",
+  "displayName": "\u003e check phone number API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_arrange_appointment:get_account",
+    "tag": "getAccount"
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.account_count = null AND $session.params.loans_count = null AND $session.params.cards_count = null AND $session.params.mortgage_count = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.branch_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect appointment reason",
+    "name": "2fd9495c-35dc-4452-b798-3d0e629997b9"
+  }, {
+    "condition": "$session.params.account_count \u003e 1 OR $session.params.loans_count \u003e 1 OR $session.params.cards_count \u003e 1 OR $session.params.mortgage_count \u003e 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.existing_customer",
+        "value": "true"
+      } ]
+    },
+    "targetPage": "\u003e collect appointment reason",
+    "name": "4cd3c4df-1428-424d-9600-c7f768e425aa"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after some time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "9a25cc90-22be-4c31-a237-be95d29c11c6"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after some time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "c43639f6-f581-4474-8e3c-a85ade43ad7b"
+  } ]
+}

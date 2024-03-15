@@ -1,0 +1,11 @@
+{
+  "name": "acc8f6bb-2c8d-4bf5-ae9a-3c95d2497559",
+  "displayName": "prebuilt_components_zip_code_collection_collect_zip_code",
+  "parameters": [ {
+    "id": "zip_code",
+    "entityType": "@sys.number-sequence",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 39
+}

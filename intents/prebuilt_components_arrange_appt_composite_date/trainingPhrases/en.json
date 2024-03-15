@@ -1,0 +1,72 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "change the date",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "to october 31",
+      "parameterId": "dob",
+      "auto": true
+    }, {
+      "text": "st",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2nd of next month",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "maybe ",
+      "auto": true
+    }, {
+      "text": "next friday",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i will book the appointment for ",
+      "auto": true
+    }, {
+      "text": "september 20 2023",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i will go with ",
+      "auto": true
+    }, {
+      "text": "coming monday",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "let me go with ",
+      "auto": true
+    }, {
+      "text": "tomorrow",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

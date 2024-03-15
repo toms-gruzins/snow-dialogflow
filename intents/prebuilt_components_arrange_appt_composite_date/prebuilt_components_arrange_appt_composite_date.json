@@ -1,0 +1,10 @@
+{
+  "name": "531d3c2c-a2a8-41e0-a448-d4ab7f57a6d4",
+  "displayName": "prebuilt_components_arrange_appt_composite_date",
+  "parameters": [ {
+    "id": "dob",
+    "entityType": "@prebuilt_components_dob_collection_dob_composite"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

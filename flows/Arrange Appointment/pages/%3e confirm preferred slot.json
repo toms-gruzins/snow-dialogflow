@@ -1,0 +1,153 @@
+{
+  "name": "260b51dc-a219-4b21-a43f-1341d4490bd6",
+  "displayName": "\u003e confirm preferred slot",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.preferred_slot_counter",
+      "value": "$sys.func.ADD($flow.preferred_slot_counter,1)"
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$sys.func.COUNT($flow.available_slots) = 1",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "To proceed further with the available appointment time, say yes." ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eYou have selected \u003csay-as interpret-as=\"time\" format=\"hms12\"\u003e$flow.preferred_slot\u003c/say-as\u003e. To proceed further with the selected appointment time, say yes.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "appointment slot check",
+    "name": "8ffe412d-5c1a-4b7b-9b56-6a153c31bae7"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.preferred_slot_counter \u003c $flow.max_retry_count",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Can you please provide your time slot again? For example, if it is 10 o'clock in the morning, say 10 a.m." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.preferred_slot",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect preferred slot",
+    "name": "04c12ced-a177-4e45-b774-bc17e5218e6f"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.preferred_slot_counter = $flow.max_retry_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "654d328a-4640-4844-a169-a64ab0ccf0d0"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "9a59083c-fa6d-41e3-984b-395d287271ab"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "80388746-6a03-48dc-a656-ec6a527b9b73"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. You have selected $flow.preferred_slot. To proceed further with the selected appointment time, say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "71552cae-553b-4f78-b131-1b0e4f9e6bbb"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. You have selected $flow.preferred_slot. To proceed further with the selected appointment time, say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "bdc2e282-80d4-47e4-bfc1-cb27a7d6cdb7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "922c6660-6eb5-44e0-8e6f-22961c1c3e2a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. You have selected $flow.preferred_slot. To proceed further with the selected appointment time, say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c8a73b95-e42b-45c7-83ee-06939cfa8fe1"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. You have selected $flow.preferred_slot. To proceed further with the selected appointment time, say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3600199b-39ab-42ee-9a48-a6578cd41a94"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "f7acbd47-5d8e-4246-8634-049314328d4a"
+  } ]
+}

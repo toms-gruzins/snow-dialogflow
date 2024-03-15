@@ -1,0 +1,118 @@
+{
+  "name": "71d4e594-79da-4718-bb10-0c921b691a73",
+  "displayName": "\u003e collect appointment type phone",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Are you looking for a phone call appointment with one of our branch representatives?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.appointment_type",
+        "value": "phone"
+      } ]
+    },
+    "targetPage": "\u003e collect preferred date",
+    "name": "495cd75c-fe49-43f0-a941-693b208f847d"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "bf8795cb-13f4-4bc2-8b24-c789924c389e"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b7e2fa4b-a7bc-4cc7-8d81-a0c5a2ac859c"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "dd758198-b4b6-47a4-8d16-1e0504736ddb"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Are you looking for a phone call appointment with one of our branch representatives?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e51365d7-30a1-4d9f-a65e-0f1800f3d38b"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Are you looking for a phone call appointment with one of our branch representatives?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "628e7835-5cfb-49c1-9bc0-96b049b9f744"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Are you looking for a phone call appointment with one of our branch representatives?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7013db6f-2d97-4efa-961f-b9cbc04866fd"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Are you looking for a phone call appointment with one of our branch representatives?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d70ce7fd-30d3-4d7e-9c82-8b34378c8eba"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "624f4450-0dd4-4212-ab09-294dfde90355"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "732db515-01fe-4246-b5d9-5048b73b4bd3"
+  } ]
+}
