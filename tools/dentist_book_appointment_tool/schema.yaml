@@ -5,7 +5,7 @@ info:
     This API books appointments at DMV field office
   version: 1.0
 servers:
-  - url: https://us-central1-support-now-417017.cloudfunctions.net/
+  - url: https://us-central1-support-now-417017.cloudfunctions.net
 paths:
   /suggest_appointment_date:
     post:
