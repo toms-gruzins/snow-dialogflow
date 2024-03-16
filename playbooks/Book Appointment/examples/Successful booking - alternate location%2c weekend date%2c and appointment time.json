@@ -2,7 +2,7 @@
   "name": "361368cf-0478-4e31-b8f0-7040db70d760",
   "actions": [{
     "agentUtterance": {
-      "text": "What date would you like to make an appointment for? I have the following available:\n1. 03-18-2024\n2. 03-19-2024\n3. 03-20-2024\nIf none of these dates work for you, you can also tell me another date you'd prefer."
+      "text": "What date would you like to make an appointment for? I have the following available:\n1. 03-21-2024\n2. 03-22-2024\nIf none of these dates work for you, you can also tell me another date you'd prefer."
     }
   }, {
     "userUtterance": {
@@ -23,14 +23,14 @@
         "value": {
           "verify_result": {
             "error": "Office closed on weekends, please select another day",
-            "suggested_dates": [ "2024-03-18", "2024-03-19", "2024-03-20" ]
+            "suggested_dates": [ "2024-03-21", "2024-03-22" ]
           }
         }
       } ]
     }
   }, {
     "agentUtterance": {
-      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-19-2024\n2. 03-20-2024\n3. 03-21-2024"
+      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-21-2024\n2. 03-22-2024."
     }
   }, {
     "userUtterance": {
