@@ -1,48 +1,6 @@
 {
   "name": "f40d8061-661f-4e35-8885-d75835b14826",
-  "actions": [ {
-    "agentUtterance": {
-      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
-    }
-  }, {
-    "userUtterance": {
-      "text": "Yeah, it's 1600 Amphitheatre Pkwy, Mountain View, CA"
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "get_nearby_dmv_offices",
-      "inputParameters": [ {
-        "name": "get_nearby_dmv_offices input",
-        "value": {
-          "address": "1600 Amphitheatre Pkwy, Mountain View, CA"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "get_nearby_dmv_offices output",
-        "value": {
-          "nearby_dmv_offices": [ {
-            "address": "3665 Flora Vista Ave, Santa Clara, CA 95051",
-            "name": "Santa Clara DMV"
-          }, {
-            "address": "1500 Sullivan Ave, Daly City, CA 94015",
-            "name": "Daly City DMV"
-          }, {
-            "address": "6300 W Las Positas Blvd, Pleasanton, CA 94588",
-            "name": "Pleasanton DMV"
-          } ]
-        }
-      } ]
-    }
-  }, {
-    "agentUtterance": {
-      "text": "Thank you. I have found the following nearby DMV offices for you. Please tell me which one you'd like to visit.\nSanta Clara DMV: 3665 Flora Vista Ave, Santa Clara, CA 95051\nDaly City DMV: 1500 Sullivan Ave, Daly City, CA 94015\nPleasanton DMV: 6300 W Las Positas Blvd, Pleasanton, CA 94588"
-    }
-  }, {
-    "userUtterance": {
-      "text": "I want to book a hotel in Santa Clara"
-    }
-  }, {
+  "actions": [{
     "playbookInvocation": {
       "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/a214201a-a81e-409b-b561-4f7e08437a04",
       "playbookInput": {
@@ -64,7 +22,7 @@
     }
   } ],
   "playbookInput": {
-    "precedingConversationSummary": "User asks to schedule an appointment at the local DMV."
+    "precedingConversationSummary": "User asks to schedule an appointment at the local Dentist."
   },
   "playbookOutput": {
     "executionSummary": "User asked to book a hotel, and the agent informed the user that it can handle booking appointments and renewing licenses. The agent asked if the user wanted to continue and the user declined.",
