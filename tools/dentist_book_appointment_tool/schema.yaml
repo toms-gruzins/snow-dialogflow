@@ -2,79 +2,11 @@ openapi: 3.0.2
 info:
   title: Book an appointment at a dentist
   description: >-
-    This API books apppointments at DMV field office
+    This API books appointments at DMV field office
   version: 1.0
 servers:
-  - url: https://example.com
+  - url: https://us-central1-support-now-417017.cloudfunctions.net/
 paths:
-  /get_nearby_dmv_offices:
-    post:
-      summary: Return the nearby DMV offices given an address
-      operationId: get_nearby_dmv_offices
-      parameters:
-        - name: session_id
-          in: query
-          description: ID of session to return
-          required: true
-          schema:
-            $ref: '@dialogflow/sessionId'
-      requestBody:
-        description: Query
-        content:
-          application/json:
-            schema:
-              required:
-                - address
-              type: object
-              properties:
-                address:
-                  type: string
-      responses:
-        '200':
-          description: Successfully got results (may be empty)
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  results:
-                    type: array
-                    items:
-                      type: string
-  /select_dmv_office:
-    post:
-      summary: Select a DMV office for the appointment from the previous list.
-      operationId: select_dmv_office
-      parameters:
-        - name: session_id
-          in: query
-          description: ID of session to return
-          required: true
-          schema:
-            $ref: '@dialogflow/sessionId'
-      requestBody:
-        description: Query
-        content:
-          application/json:
-            schema:
-              required:
-                - dmv_office_name
-              type: object
-              properties:
-                dmv_office_name:
-                  type: string
-      responses:
-        '200':
-          description: Successfully got results (may be empty)
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  results:
-                    type: array
-                    items:
-                      type: string
   /suggest_appointment_date:
     post:
       summary: Get a suggested appointment date for the appointment
