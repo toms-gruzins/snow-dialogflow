@@ -1,110 +1,12 @@
 {
   "name": "361368cf-0478-4e31-b8f0-7040db70d760",
-  "actions": [ {
+  "actions": [{
     "agentUtterance": {
-      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
+      "text": "What date would you like to make an appointment for? I have the following available:\n1. 03-18-2024\n2. 03-19-2024\n3. 03-20-2024\nIf none of these dates work for you, you can also tell me another date you'd prefer."
     }
   }, {
     "userUtterance": {
-      "text": "Yes, it's 1st Main street, MN."
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "get_nearby_dmv_offices",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-          "address": "1st Main street, MN"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "nearby_dmv_offices": [ {
-            "address": "2929 Chicago Ave, Minneapolis, MN 55407",
-            "name": "Minnesota Driver \u0026 Vehicle Services"
-          }, {
-            "address": "15026 Glazier Ave, Apple Valley, MN 55124",
-            "name": "Apple Valley DMV"
-          } ]
-        }
-      } ]
-    }
-  }, {
-    "agentUtterance": {
-      "text": "Thank you. I have found the following nearby DMV offices for you. Could you please select one?\n1. Minnesota Driver \u0026 Vehicle Services: 2929 Chicago Ave, Minneapolis, MN 55407\n2. Apple Valley DMV: 15026 Glazier Ave, Apple Valley, MN 55124\n"
-    }
-  }, {
-    "userUtterance": {
-      "text": "I want to go to Brooklyn DMV"
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "select_dmv_office",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-          "dmv_office_name": "Brooklyn DMV"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "verify_result": "Selection not found in candidate list: ['Minnesota Driver \u0026 Vehicle Services', 'Apple Valley DMV']"
-        }
-      } ]
-    }
-  }, {
-    "agentUtterance": {
-      "text": "I'm sorry, I cannot find the DMV you provided. Could you select from the list: \n1. Minnesota Driver \u0026 Vehicle Services\n2. Apple Valley DMV"
-    }
-  }, {
-    "userUtterance": {
-      "text": "Then Apple Valley DMV"
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "select_dmv_office",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-          "dmv_office_name": "Apple Valley DMV"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "verify_result": "SUCCESS"
-        }
-      } ]
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "suggest_appointment_date",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-        
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "suggested_dates": [ "2023-12-13", "2023-12-14", "2023-12-15" ]
-        }
-      } ]
-    }
-  }, {
-    "agentUtterance": {
-      "text": "What date would you like to make an appointment for? I have the following available:\n1. 12-13-2023\n2. 12-14-2023\n3. 12-15-2023\nIf none of these dates work for you, you can also tell me another date you'd prefer."
-    }
-  }, {
-    "userUtterance": {
-      "text": "I want to go on Decebmer 16, 2023"
+      "text": "I want to go on March 17, 2024"
     }
   }, {
     "toolUse": {
@@ -113,7 +15,7 @@
       "inputParameters": [ {
         "name": "request",
         "value": {
-          "appointment_date": "2023-12-16"
+          "appointment_date": "2024-03-17"
         }
       } ],
       "outputParameters": [ {
@@ -121,18 +23,18 @@
         "value": {
           "verify_result": {
             "error": "Office closed on weekends, please select another day",
-            "suggested_dates": [ "2023-12-18", "2023-12-19", "2023-12-20" ]
+            "suggested_dates": [ "2024-03-18", "2024-03-19", "2024-03-20" ]
           }
         }
       } ]
     }
   }, {
     "agentUtterance": {
-      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 12-18-2023\n2. 12-19-2023\n3. 12-20-2023"
+      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-19-2023\n2. 03-20-2023\n3. 03-21-2023"
     }
   }, {
     "userUtterance": {
-      "text": " December 19, 2023"
+      "text": " March 19, 2024"
     }
   }, {
     "toolUse": {
@@ -141,7 +43,7 @@
       "inputParameters": [ {
         "name": "request",
         "value": {
-          "appointment_date": "2023-12-19"
+          "appointment_date": "2024-03-19"
         }
       } ],
       "outputParameters": [ {
@@ -241,7 +143,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Please confirm whether you'd like to book this appointment:\nDMV office: Apple Valley DMV\nAppointment date: 12-19-2023\nAppointment time: 9:30"
+      "text": "Please confirm whether you'd like to book this appointment:\nAppointment date: 12-19-2023\nAppointment time: 9:30"
     }
   }, {
     "userUtterance": {
@@ -270,7 +172,7 @@
     }
   } ],
   "playbookOutput": {
-    "executionSummary": "Customer booked appointment at a DMV office."
+    "executionSummary": "Customer booked appointment at a Dentist office."
   },
   "displayName": "Successful booking - alternate location, weekend date, and appointment time",
   "retrievalStrategy": "DEFAULT"
