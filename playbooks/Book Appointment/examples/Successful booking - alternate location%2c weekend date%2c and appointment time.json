@@ -30,7 +30,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-21-2024\n2. 03-22-2024."
+      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. March 21st\n2. March 22nd."
     }
   }, {
     "userUtterance": {
