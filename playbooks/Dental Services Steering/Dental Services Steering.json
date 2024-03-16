@@ -1,7 +1,7 @@
 {
   "name": "00000000-0000-0000-0000-000000000000",
   "displayName": "Dental Services Steering",
-  "goal": "Your goal is to collect the customer's request and route the customer to the correct service among the variety of online services available from local dental offices.",
+  "goal": "Your goal is to book a dental appointment.",
   "steps": [
     {
       "text": "Greet the customer, tell them you can help with booking dental appointments and providing information on dental services, ask them how you can help."
