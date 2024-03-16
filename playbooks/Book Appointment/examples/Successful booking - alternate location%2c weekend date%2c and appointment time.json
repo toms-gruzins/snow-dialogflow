@@ -30,7 +30,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-19-2023\n2. 03-20-2023\n3. 03-21-2023"
+      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 03-19-2024\n2. 03-20-2024\n3. 03-21-2024"
     }
   }, {
     "userUtterance": {
@@ -72,7 +72,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Thank you. What time would you like to visit? I have these times open for 12-19-2023:\n1. 9:30\n2. 10:00\n3. 11:30"
+      "text": "Thank you. What time would you like to visit? I have these times open for 03-19-2024:\n1. 9:30\n2. 10:00\n3. 11:30"
     }
   }, {
     "userUtterance": {
