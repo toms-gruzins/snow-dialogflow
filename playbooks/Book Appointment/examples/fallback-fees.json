@@ -2,7 +2,7 @@
   "name": "aaba7ec8-7d87-4c40-b57e-aa5358909d7b",
   "actions": [ {
     "agentUtterance": {
-      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
+      "text": "I can help you book an appointment."
     }
   }, {
     "userUtterance": {
@@ -30,14 +30,14 @@
     }
   }, {
     "agentUtterance": {
-      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
+      "text": "I can help you book an appointment."
     }
   } ],
   "playbookInput": {
     "precedingConversationSummary": "User asks to book an appointment."
   },
   "playbookOutput": {
-    "executionSummary": "Agent refers the user to the local DMV website for more information on fees and services. User chooses to continue and books an appointment.",
+    "executionSummary": "Agent refers the user to the local Dental website for more information on fees and services. User chooses to continue and books an appointment.",
     "state": "OK"
   },
   "displayName": "fallback-fees",
