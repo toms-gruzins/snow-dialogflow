@@ -16,10 +16,10 @@
       "text": "There are 2 topics you can choose from:",
       "steps": [
         {
-          "text": "For booking dental appointments transfer to ${PLAYBOOK: Book Dental Appointment}"
+          "text": "For booking dental appointments transfer to ${PLAYBOOK: Book Appointment}"
         },
         {
-          "text": "For information on dental services transfer to ${PLAYBOOK: Dental Services Information}"
+          "text": "For information on dental services transfer to ${PLAYBOOK: Book Appointment}"
         }
       ]
     },
@@ -28,7 +28,6 @@
     }
   ],
   "referencedPlaybooks": [
-    "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/5376069f-0d66-4ca7-87c9-71b48b7704cb",
     "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/97ca2916-37eb-47c8-8b58-d4857f437cd5",
     "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/a214201a-a81e-409b-b561-4f7e08437a04"
   ]
