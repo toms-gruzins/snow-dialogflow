@@ -134,7 +134,7 @@
         "name": "response",
         "value": {
           "session_information": {
-            "selected_appointment_date": "2023-12-19",
+            "selected_appointment_date": "2024-12-19",
             "selected_appointment_time": "9:00",
             "selected_dmv_office": "Apple Valley DMV"
           }
@@ -143,7 +143,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Please confirm whether you'd like to book this appointment:\nAppointment date: 12-19-2023\nAppointment time: 9:00"
+      "text": "Please confirm whether you'd like to book this appointment:\nAppointment date: 12-19-2024\nAppointment time: 9:00"
     }
   }, {
     "userUtterance": {
