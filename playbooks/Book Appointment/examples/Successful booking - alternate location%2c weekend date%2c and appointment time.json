@@ -66,13 +66,13 @@
       "outputParameters": [ {
         "name": "response",
         "value": {
-          "available_appointment_time": [ "9:30", "10:00", "11:30" ]
+          "available_appointment_time": [ "9:00", "10:00", "11:00" ]
         }
       } ]
     }
   }, {
     "agentUtterance": {
-      "text": "Thank you. What time would you like to visit? I have these times open for 03-19-2024:\n1. 9:30\n2. 10:00\n3. 11:30"
+      "text": "Thank you. What time would you like to visit? I have these times open for 03-19-2024:\n1. 9:00\n2. 10:00\n3. 11:00"
     }
   }, {
     "userUtterance": {
@@ -85,19 +85,19 @@
       "inputParameters": [ {
         "name": "request",
         "value": {
-          "appointment_time": "9:00"
+          "appointment_time": "8:00"
         }
       } ],
       "outputParameters": [ {
         "name": "response",
         "value": {
-          "verify_result": "Selection not found in candidate list [\"9:30\", \"10:00\", \"11:30\"]"
+          "verify_result": "Selection not found in candidate list [\"9:00\", \"10:00\", \"11:00\"]"
         }
       } ]
     }
   }, {
     "agentUtterance": {
-      "text": "I am sorry. 9:00 doesn't work. What time would you like to visit? I have\n1. 9:30\n2. 10:00\n3. 11:30"
+      "text": "I am sorry. 9:00 doesn't work. What time would you like to visit? I have\n1. 9:00\n2. 10:00\n3. 11:00"
     }
   }, {
     "userUtterance": {
@@ -110,7 +110,7 @@
       "inputParameters": [ {
         "name": "request",
         "value": {
-          "appointment_time": "9:30"
+          "appointment_time": "9:00"
         }
       } ],
       "outputParameters": [ {
@@ -135,7 +135,7 @@
         "value": {
           "session_information": {
             "selected_appointment_date": "2023-12-19",
-            "selected_appointment_time": "9:30",
+            "selected_appointment_time": "9:00",
             "selected_dmv_office": "Apple Valley DMV"
           }
         }
@@ -143,7 +143,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Please confirm whether you'd like to book this appointment:\nAppointment date: 12-19-2023\nAppointment time: 9:30"
+      "text": "Please confirm whether you'd like to book this appointment:\nAppointment date: 12-19-2023\nAppointment time: 9:00"
     }
   }, {
     "userUtterance": {
