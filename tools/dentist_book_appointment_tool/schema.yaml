@@ -5,7 +5,7 @@ info:
     This API books apppointments at DMV field office
   version: 1.0
 servers:
-  - url: https://example.com
+  - url: https://my-json-server.typicode.com/RDobelis/mockdata
 paths:
   /get_nearby_dmv_offices:
     post:
