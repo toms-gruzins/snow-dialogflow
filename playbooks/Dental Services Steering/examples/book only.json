@@ -22,14 +22,6 @@
         "executionSummary": "Customer booked an appointment."
       }
     }
-  }, {
-    "agentUtterance": {
-      "text": "Thank you, please confirm your name."
-    }
-  }, {
-    "userUtterance": {
-      "text": "Armands"
-    }
   },{
     "agentUtterance": {
       "text": "Thank you. Is there anything else I can help with?"
@@ -48,4 +40,4 @@
   },
   "displayName": "book only",
   "retrievalStrategy": "DEFAULT"
-}
+}]}
