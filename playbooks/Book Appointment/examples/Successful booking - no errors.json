@@ -132,6 +132,12 @@
     }
   }, {
     "agentUtterance": {
-      "text": ""
+      "text": "Thank you. I have booked the appointment your confirmation number is L9UC52ZJ."
     }
-  } ]}
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Customer booked appointment at a DMV office."
+  },
+  "displayName": "Successful booking - no errors",
+  "retrievalStrategy": "DEFAULT"
+}
