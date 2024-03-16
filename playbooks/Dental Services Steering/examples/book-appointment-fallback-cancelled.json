@@ -30,7 +30,7 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Okay, thanks for contacting your DMV assistant. Have a nice day!"
+      "text": "Okay, thanks for contacting Toms Dental. Have a nice day!"
     }
   } ],
   "displayName": "book-appointment-fallback-cancelled",
