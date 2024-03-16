@@ -151,14 +151,6 @@
     }
   },
     {
-      "agentUtterance": {
-        "text": "Thank you. Please confirm your name."
-      }
-    }, {
-      "userUtterance": {
-        "text": "Arthur Dent"
-      }
-    },{
     "toolUse": {
       "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
       "action": "book_appointment",
@@ -175,7 +167,34 @@
         }
       } ]
     }
-  }, {
+  },
+    {
+      "agentUtterance": {
+        "text": "Please confirm your name."
+      }
+    }, {
+      "userUtterance": {
+        "text": "Lisais."
+      }
+    },
+    {
+      "toolUse": {
+        "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+        "action": "book_appointment",
+        "inputParameters": [ {
+          "name": "request",
+          "value": {
+
+          }
+        } ],
+        "outputParameters": [ {
+          "name": "response",
+          "value": {
+            "confirmation_number": "BNFG987H"
+          }
+        } ]
+      }
+    },{
     "agentUtterance": {
       "text": "Thank you. I have booked the appointment, your confirmation number is BNFG987H."
     }
