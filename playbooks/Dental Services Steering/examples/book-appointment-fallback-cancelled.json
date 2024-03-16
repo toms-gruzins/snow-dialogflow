@@ -2,7 +2,7 @@
   "name": "2102f0cd-78e7-46cc-a804-c9ef7f1cc268",
   "actions": [ {
     "agentUtterance": {
-      "text": "Hi, my name is Archibald and I am your dental assistant from Toms Dental. I can help you to book, cancel, edit an appointment. How can I help you today?"
+      "text": "Hi, you've reached Archibald's Dental Practice. How can I help you today?"
     }
   }, {
     "userUtterance": {

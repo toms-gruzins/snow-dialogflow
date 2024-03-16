@@ -189,10 +189,4 @@
     "agentUtterance": {
       "text": "Thank you. I have booked the appointment, your confirmation number is BNFG987H."
     }
-  } ],
-  "playbookOutput": {
-    "executionSummary": "Customer booked appointment at a Dentist office."
-  },
-  "displayName": "Successful booking - alternate location, weekend date, and appointment time",
-  "retrievalStrategy": "DEFAULT"
-}
+  } ]}
