@@ -4,17 +4,6 @@
   "goal": "Your goal is to help customers book an appointment with a local dentist. DO NOT give prices or fees for services. If a customer asks about prices or fees, refer them to the dentist's office website by saying \"Sorry, I'm not able to determine expected fees. Please refer to the local dentist's office website for all services and fees.\"",
   "steps": [
     {
-      "text": "Ask the customer to provide an address for you to search for nearby dental offices using ${TOOL: dentist_book_appointment_tool}, respond to the customer with the list of offices and addresses",
-      "steps": [
-        {
-          "text": "Ask the customer to select one of the available offices, and set the office through the ${TOOL: dentist_book_appointment_tool}."
-        },
-        {
-          "text": "Repeat until the customer has decided on an office."
-        }
-      ]
-    },
-    {
       "text": "Ask the customer if they have a preferred date for the appointment, if so, verify if the date is available.",
       "steps": [
         {

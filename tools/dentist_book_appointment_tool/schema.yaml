@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: DMV book onsite appointment APIs
+  title: Book an appointment at a dentist
   description: >-
     This API books apppointments at DMV field office
   version: 1.0
