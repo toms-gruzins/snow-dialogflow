@@ -1,0 +1,44 @@
+{
+  "name": "27ba4c28-ec8f-4d5a-8f8b-26f8b24c2cc6",
+  "displayName": "virtual-user:steering:route-drivers-license-greeting",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "I want to renew my license"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1702408490,
+    "nanos": 690385000
+  },
+  "testConfig": {
+    "useCaseDescription": "You are a polite customer of the DMV, and you would like to renew your driver license."
+  },
+  "expectedTestCaseResult": {
+    "expectedActions": [ {
+      "playbookInvocation": {
+        "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/5376069f-0d66-4ca7-87c9-71b48b7704cb"
+      }
+    } ]
+  },
+  "languageCode": "en"
+}

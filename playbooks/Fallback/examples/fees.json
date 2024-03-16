@@ -1,0 +1,18 @@
+{
+  "name": "e8b18cc6-cae4-4743-a01c-ddba0183bbbb",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "Sorry, I'm not able to determine expected fees. Please refer to your local DMV's website for all services and fees."
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User asks about fees, prices or costs for renewing their license."
+  },
+  "playbookOutput": {
+    "executionSummary": "Agent referred the user to the local DMV website for information about fees and services.",
+    "state": "OK"
+  },
+  "displayName": "fees",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

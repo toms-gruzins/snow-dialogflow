@@ -1,0 +1,9 @@
+{
+  "name": "e4796839-fe96-4610-907d-280968269629",
+  "displayName": "dmv_book_appointment_tool",
+  "description": "Book an appointment at a DMV field office.",
+  "openApiSpec": {
+  
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "28add02e-2af0-455b-9f93-c1da6d1ea22d",
+  "displayName": "steering:route-drivers-license-direct",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "can you help me renew my driver's license?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1702408535,
+    "nanos": 9594000
+  },
+  "expectedTestCaseResult": {
+    "expectedActions": [ {
+      "playbookInvocation": {
+        "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/5376069f-0d66-4ca7-87c9-71b48b7704cb"
+      }
+    } ]
+  },
+  "languageCode": "en"
+}

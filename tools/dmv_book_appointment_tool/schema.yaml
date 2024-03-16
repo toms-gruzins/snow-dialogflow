@@ -1,0 +1,238 @@
+openapi: 3.0.2
+info:
+  title: DMV book onsite appointment APIs
+  description: >-
+    This API books apppointments at DMV field office
+  version: 1.0
+servers:
+  - url: https://example.com
+paths:
+  /get_nearby_dmv_offices:
+    post:
+      summary: Return the nearby DMV offices given an address
+      operationId: get_nearby_dmv_offices
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - address
+              type: object
+              properties:
+                address:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /select_dmv_office:
+    post:
+      summary: Select a DMV office for the appointment from the previous list.
+      operationId: select_dmv_office
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - dmv_office_name
+              type: object
+              properties:
+                dmv_office_name:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /suggest_appointment_date:
+    post:
+      summary: Get a suggested appointment date for the appointment
+      operationId: suggest_appointment_date
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /select_appointment_date:
+    post:
+      summary: Select the date for the appointment
+      operationId: select_appointment_date
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - appointment_date
+              type: object
+              properties:
+                appointment_date:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /get_available_appointment_time:
+    post:
+      summary: Get the avaialbe appointment timeslots for the appointment
+      operationId: get_available_appointment_time
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /select_appointment_time:
+    post:
+      summary: Select the time slot for the appointment
+      operationId: select_appointment_time
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - appointment_time
+              type: object
+              properties:
+                appointment_time:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /get_session_information:
+    post:
+      summary: Get the appointment information for the current session.
+      operationId: get_session_information
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+
+  /book_appointment:
+    post:
+      summary: Book the appointment
+      operationId: book_appointment
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string

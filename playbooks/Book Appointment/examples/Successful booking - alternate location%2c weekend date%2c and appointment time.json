@@ -1,0 +1,277 @@
+{
+  "name": "361368cf-0478-4e31-b8f0-7040db70d760",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes, it's 1st Main street, MN."
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "get_nearby_dmv_offices",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "address": "1st Main street, MN"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "nearby_dmv_offices": [ {
+            "address": "2929 Chicago Ave, Minneapolis, MN 55407",
+            "name": "Minnesota Driver \u0026 Vehicle Services"
+          }, {
+            "address": "15026 Glazier Ave, Apple Valley, MN 55124",
+            "name": "Apple Valley DMV"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. I have found the following nearby DMV offices for you. Could you please select one?\n1. Minnesota Driver \u0026 Vehicle Services: 2929 Chicago Ave, Minneapolis, MN 55407\n2. Apple Valley DMV: 15026 Glazier Ave, Apple Valley, MN 55124\n"
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to go to Brooklyn DMV"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_dmv_office",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "dmv_office_name": "Brooklyn DMV"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "Selection not found in candidate list: ['Minnesota Driver \u0026 Vehicle Services', 'Apple Valley DMV']"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I'm sorry, I cannot find the DMV you provided. Could you select from the list: \n1. Minnesota Driver \u0026 Vehicle Services\n2. Apple Valley DMV"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Then Apple Valley DMV"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_dmv_office",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "dmv_office_name": "Apple Valley DMV"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "SUCCESS"
+        }
+      } ]
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "suggest_appointment_date",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "suggested_dates": [ "2023-12-13", "2023-12-14", "2023-12-15" ]
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "What date would you like to make an appointment for? I have the following available:\n1. 12-13-2023\n2. 12-14-2023\n3. 12-15-2023\nIf none of these dates work for you, you can also tell me another date you'd prefer."
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to go on Decebmer 16, 2023"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_appointment_date",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "appointment_date": "2023-12-16"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": {
+            "error": "Office closed on weekends, please select another day",
+            "suggested_dates": [ "2023-12-18", "2023-12-19", "2023-12-20" ]
+          }
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Sorry, our office closes on weekends. Would you like to select one of the following dates instead?\n1. 12-18-2023\n2. 12-19-2023\n3. 12-20-2023"
+    }
+  }, {
+    "userUtterance": {
+      "text": " December 19, 2023"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_appointment_date",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "appointment_date": "2023-12-19"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "SUCCESS"
+        }
+      } ]
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "get_available_appointment_time",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "available_appointment_time": [ "9:30", "10:00", "11:30" ]
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. What time would you like to visit? I have these times open for 12-19-2023:\n1. 9:30\n2. 10:00\n3. 11:30"
+    }
+  }, {
+    "userUtterance": {
+      "text": "nine"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_appointment_time",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "appointment_time": "9:00"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "Selection not found in candidate list [\"9:30\", \"10:00\", \"11:30\"]"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I am sorry. 9:00 doesn't work. What time would you like to visit? I have\n1. 9:30\n2. 10:00\n3. 11:30"
+    }
+  }, {
+    "userUtterance": {
+      "text": "nine thirty"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "select_appointment_time",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "appointment_time": "9:30"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "SUCCESS"
+        }
+      } ]
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "get_session_information",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "session_information": {
+            "selected_appointment_date": "2023-12-19",
+            "selected_appointment_time": "9:30",
+            "selected_dmv_office": "Apple Valley DMV"
+          }
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Please confirm whether you'd like to book this appointment:\nDMV office: Apple Valley DMV\nAppointment date: 12-19-2023\nAppointment time: 9:30"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+      "action": "book_appointment",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "confirmation_number": "BNFG987H"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. I have booked the appointment, your confirmation number is BNFG987H."
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Customer booked appointment at a DMV office."
+  },
+  "displayName": "Successful booking - alternate location, weekend date, and appointment time",
+  "retrievalStrategy": "DEFAULT"
+}

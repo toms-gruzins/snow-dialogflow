@@ -1,0 +1,40 @@
+{
+  "name": "68eabde8-2dee-42f9-b549-4cb95f70c32b",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "May I have your latest driver's license number please?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "How much is this going to cost me?"
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/a214201a-a81e-409b-b561-4f7e08437a04",
+      "playbookInput": {
+        "precedingConversationSummary": "User asked about fees, prices, or costs."
+      },
+      "playbookOutput": {
+        "executionSummary": "Agent referred the user to their local DMV website for information about fees."
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Would you like to continue?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "No I don't want to"
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "Customer wants to renew their driver's license."
+  },
+  "playbookOutput": {
+    "executionSummary": "User asked about fees and chose not to continue renewing their driver's license.",
+    "state": "OK"
+  },
+  "displayName": "fees-fallback",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

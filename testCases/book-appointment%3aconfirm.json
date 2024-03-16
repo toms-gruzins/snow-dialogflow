@@ -1,0 +1,94 @@
+{
+  "name": "bed79f13-35df-404a-98f3-bf02d67a1e05",
+  "displayName": "book-appointment:confirm",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hi I'd like to schedule an appointment at the office"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "Yes, it's 1600 Amphitheatre Pkwy, Mountain View, CA 94043"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "San Jose works for me"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "The 18th is fine"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "2:30"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1702408881,
+    "nanos": 710203000
+  },
+  "expectedTestCaseResult": {
+    "expectedActions": [ {
+      "playbookInvocation": {
+        "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/97ca2916-37eb-47c8-8b58-d4857f437cd5"
+      }
+    }, {
+      "toolUse": {
+        "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
+        "action": "select_dmv_office",
+        "inputParameters": [ {
+          "name": "requestBody",
+          "value": {
+            "dmv_office_name": "San Jose DMV"
+          }
+        } ],
+        "outputParameters": [ {
+          "name": "200",
+          "value": {
+            "verify_result": "SUCCESS"
+          }
+        } ]
+      }
+    } ]
+  },
+  "languageCode": "en"
+}

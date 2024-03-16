@@ -1,0 +1,68 @@
+{
+  "name": "e96866d1-92c7-4e50-bf97-a07caf57c3c5",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "May I have your latest driver's license number please?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes, it's UIHB0986."
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_drivers_license_number",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "drivers_license_number": "UIHB0986"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "The drivers license number does not exist in system"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. I cannot find the license number. Could you please repeat your latest driver's license number for me?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "The number is UIHB0986"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_drivers_license_number",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "drivers_license_number": "UIHB0986"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "The drivers license number does not exist in system"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I am sorry, I cannot find your license number in the system. Please visit a DMV field office to renew your license."
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User wants to renew their driver's license."
+  },
+  "playbookOutput": {
+    "executionSummary": "Cannot find the license number in the system. Redirect customer to DMV field office.",
+    "state": "OK"
+  },
+  "displayName": "license number not found",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

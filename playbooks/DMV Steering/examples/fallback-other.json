@@ -1,0 +1,33 @@
+{
+  "name": "743660fd-a656-492c-95b3-2c3c5c3af90f",
+  "actions": [ {
+    "userUtterance": {
+      "text": "I want to buy a car"
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/a214201a-a81e-409b-b561-4f7e08437a04",
+      "playbookInput": {
+        "precedingConversationSummary": "User asked about purchasing a car, which is unrelated to DMV services."
+      },
+      "playbookOutput": {
+        "executionSummary": "Agent informed the user that it can help with renewing licenses or booking appointments."
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can help you with today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "You can't help me"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Okay. Thanks for contacting your DMV assistant."
+    }
+  } ],
+  "displayName": "fallback-other",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_PENDING"
+}

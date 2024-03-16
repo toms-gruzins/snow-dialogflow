@@ -1,0 +1,48 @@
+{
+  "name": "bc9a6f0b-71a8-401d-a860-182a00a5846b",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "May I have your latest driver's license number please?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to buy a new car."
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/a214201a-a81e-409b-b561-4f7e08437a04",
+      "playbookInput": {
+        "precedingConversationSummary": "User asked buying a new car, which is unrelated to DMV services."
+      },
+      "playbookOutput": {
+        "executionSummary": "Agent informed the user that it can help with renewing a driver's license or booking an appointment."
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Would you like to continue?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Fine"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "May I have your latest driver's license number please?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "actually nevermind I don't want to do this anymore"
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User wants to renew their driver's license."
+  },
+  "playbookOutput": {
+    "executionSummary": "User asked about buying a new car, which is unrelated to DMV services. User started license renewal process but chose not to continue.",
+    "state": "OK"
+  },
+  "displayName": "other-fallback",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

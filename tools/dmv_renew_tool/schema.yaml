@@ -1,0 +1,240 @@
+openapi: 3.0.2
+info:
+  title: DMV renew drivers license APIs
+  description: >-
+    This API renews drivers license
+  version: 1.0
+servers:
+  - url: https://example.com
+paths:
+  /verify_drivers_license_number:
+    post:
+      summary: Verify the drivers license number
+      operationId: verify_drivers_license_number
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - drivers_license_number
+              type: object
+              properties:
+                drivers_license_number:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /verify_expiry_date:
+    post:
+      summary: Verify the drivers license expiry date
+      operationId: verify_expiry_date
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - expiry_date
+              type: object
+              properties:
+                expiry_date:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /verify_date_of_birth:
+    post:
+      summary: Verify the driver's date of birth
+      operationId: verify_date_of_birth
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - date_of_birth
+              type: object
+              properties:
+                date_of_birth:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /verify_driver_name:
+    post:
+      summary: Verify the drivers name
+      operationId: verify_driver_name
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              required:
+                - driver_name
+              type: object
+              properties:
+                driver_name:
+                  type: string
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /get_session_information:
+    post:
+      summary: Get the information for the current session
+      operationId: get_renew_license_session_information
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+  /get_online_renewal_eligibility:
+    post:
+      summary: Verify if the customer is eligible for online renewal
+      operationId: get_online_renewal_eligibility
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+
+  /apply_renewal:
+    post:
+      summary: Apply for online renewal
+      operationId: apply_renewal
+      parameters:
+        - name: session_id
+          in: query
+          description: ID of session to return
+          required: true
+          schema:
+            $ref: '@dialogflow/sessionId'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: string
+components:
+  schemas:
+    DriversLicenseParameters:
+      required:
+        - drivers_licence_number
+        - expiry_date
+        - driver_name
+        - date_of_birth
+      type: object
+      properties:
+        drivers_licence_number:
+          type: string
+        expiry_date:
+          type: string
+        driver_name:
+          type: string
+        date_of_birth:
+          type: string
+    Address:
+      required:
+        - address
+      type: object
+      properties:
+        address:
+          type: string

@@ -1,0 +1,43 @@
+{
+  "name": "5c845b8e-fd95-4fdb-8a9c-4ea3c110a30a",
+  "actions": [ {
+    "userUtterance": {
+      "text": "Hi"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Hi, I'm your DMV assistant. I can help you renew your driver's license online and book an appointment at a DMV field office. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to book an appointment at field office."
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/97ca2916-37eb-47c8-8b58-d4857f437cd5",
+      "playbookInput": {
+        "precedingConversationSummary": "Customer wants to book an appointment at field office."
+      },
+      "playbookOutput": {
+        "executionSummary": "Customer booked an appointment."
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can help with?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "No."
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you! Have a nice day!"
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Customer booked an appointment."
+  },
+  "displayName": "book only",
+  "retrievalStrategy": "DEFAULT"
+}

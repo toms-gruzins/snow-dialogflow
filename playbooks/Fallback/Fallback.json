@@ -1,0 +1,10 @@
+{
+  "name": "a214201a-a81e-409b-b561-4f7e08437a04",
+  "displayName": "Fallback",
+  "goal": "Classify requests that are out of scope of the DMV agent based on the user's last utterance and respond with an appropriate message.",
+  "steps": [ {
+    "text": "If the user asked about fees, prices, or costs, respond saying you're unable to determine fees and refer the user to their local DMV website."
+  }, {
+    "text": "If the user asked about anything else, respond by saying you're unable to understand what the user is asking for and ask if you can help them with renewing their driver's license or booking an appointment."
+  } ]
+}

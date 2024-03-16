@@ -1,0 +1,43 @@
+{
+  "name": "1344d4ff-65c3-49df-b7b0-c578d8b7c66f",
+  "actions": [ {
+    "userUtterance": {
+      "text": "Hi"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Hi, I'm your DMV assistant. I can help you renew your driver's license online and book an appointment at a DMV field office. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to renew my license."
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/5376069f-0d66-4ca7-87c9-71b48b7704cb",
+      "playbookInput": {
+        "precedingConversationSummary": "Customer wants to renew their driver's license."
+      },
+      "playbookOutput": {
+        "executionSummary": "Customer applied for online drivers license renewal"
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can help with?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "No."
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you! Have a nice day!"
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Customer applied for online drivers license renewal."
+  },
+  "displayName": "renew-online-success",
+  "retrievalStrategy": "DEFAULT"
+}

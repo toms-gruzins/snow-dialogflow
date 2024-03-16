@@ -1,0 +1,39 @@
+{
+  "name": "2102f0cd-78e7-46cc-a804-c9ef7f1cc268",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "Hi, I'm your DMV assistant. I can help you renew your driver's license online and book an appointment at a DMV field office. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "I want to book an appointment"
+    }
+  }, {
+    "playbookInvocation": {
+      "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/97ca2916-37eb-47c8-8b58-d4857f437cd5",
+      "playbookInput": {
+        "precedingConversationSummary": "User wants to book an appointment."
+      },
+      "playbookOutput": {
+        "executionSummary": "User asks about costs and the agent refers them to the local DMV website for more information. The user chooses not to continue booking an appointment.",
+        "state": "CANCELLED"
+      },
+      "playbookState": "OUTPUT_STATE_CANCELLED"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can help you with today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "No that's it."
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Okay, thanks for contacting your DMV assistant. Have a nice day!"
+    }
+  } ],
+  "displayName": "book-appointment-fallback-cancelled",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_PENDING"
+}

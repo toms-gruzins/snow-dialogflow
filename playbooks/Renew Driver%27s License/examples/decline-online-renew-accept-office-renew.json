@@ -1,0 +1,177 @@
+{
+  "name": "5f5438e6-3e6e-4b16-8dec-aeb982647d49",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "Please tell me your latest driver's license number."
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes, it's BKLN8720."
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_drivers_license_number",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "drivers_license_number": "BKLN8720"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "Drivers license number found\nExpiry date: not specified\nDate of birth: not specified\nDriver name: not specified\n"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. I have found your profile. Please provide the expiration date of the license."
+    }
+  }, {
+    "userUtterance": {
+      "text": "8/19/2023"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_expiry_date",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "expiry_date": "2023-08-19"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "Drivers license number found\nExpiry date: success\nDate of birth: not specified\nDriver name: not specified\n"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. Please tell me the name on the license."
+    }
+  }, {
+    "userUtterance": {
+      "text": "Emma Johnson"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_driver_name",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "driver_name": "Emma Johnson"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "Drivers license number found\nExpiry date: not specified\nDate of birth: not specified\nDriver name: success\n"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. What is your date of birth?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "09/17/1998"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "verify_date_of_birth",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+          "date_of_birth": "1998-09-17"
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "SUCCESS"
+        }
+      } ]
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "get_renew_license_session_information",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "session_information": {
+            "date_of_birth": "1998-09-17",
+            "driver_name": "Emma Johnson",
+            "drivers_license_number": "BKLN8720",
+            "expiry_date": "2023-08-19"
+          }
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Could you please confirm this information for me?\nDriver name: Emma Johnson\nDate of birth: 09-17-1998\nDriver's license number: BKLN8720\nExpiration date: 08-19-2023"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes that's right"
+    }
+  }, {
+    "toolUse": {
+      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+      "action": "get_online_renewal_eligibility",
+      "inputParameters": [ {
+        "name": "request",
+        "value": {
+        
+        }
+      } ],
+      "outputParameters": [ {
+        "name": "response",
+        "value": {
+          "verify_result": "YES"
+        }
+      } ]
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you. I have verified your information. You are eligible for online renewal. Would you like to renew your driver's license online?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "No, I want to go to a field office"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Got it, I have not submitted an online renewal application for you. Would you like to go to a DMV office to renew your license?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "Yes that would be great"
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "Customer wants to renew their driver's license."
+  },
+  "playbookOutput": {
+    "executionSummary": "Customer did not apply for renewal online and wants to go to a DMV office to book an appointment.",
+    "state": "OK"
+  },
+  "displayName": "decline-online-renew-accept-office-renew",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

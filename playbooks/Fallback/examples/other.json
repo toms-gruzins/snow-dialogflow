@@ -1,0 +1,18 @@
+{
+  "name": "cb0edd26-33a4-4860-85e4-a43a6e3c7221",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "Sorry, I didn't get that. I can help you with renewing a driver's license or booking an appointment."
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User asked about where to buy a pizza, which is an unrelated topic."
+  },
+  "playbookOutput": {
+    "executionSummary": "Agent informed the user that it can help with renewing licenses or booking appointments.",
+    "state": "OK"
+  },
+  "displayName": "other",
+  "retrievalStrategy": "DEFAULT",
+  "conversationState": "OUTPUT_STATE_OK"
+}

@@ -1,0 +1,118 @@
+{
+  "name": "ec753a7b-405d-4dc9-8039-33b642348732",
+  "displayName": "drivers-license:confirm",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "I want to renew my license"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "ABCD1234"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "09-01-2023"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "the name is Jacky Wang"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "February 3 1985"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "that's correct"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+    
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1702408309,
+    "nanos": 149642000
+  },
+  "expectedTestCaseResult": {
+    "expectedActions": [ {
+      "playbookInvocation": {
+        "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/5376069f-0d66-4ca7-87c9-71b48b7704cb"
+      }
+    }, {
+      "toolUse": {
+        "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/3c774adc-3ce7-4bc6-a882-f0e136cba181",
+        "action": "verify_driver_name",
+        "inputParameters": [ {
+          "name": "requestBody",
+          "value": {
+            "driver_name": "Jacky Wang"
+          }
+        } ],
+        "outputParameters": [ {
+          "name": "200",
+          "value": {
+            "verify_result": "Drivers license number found\nExpiry date: success\nDate of birth: not specified\nDriver name: success\n"
+          }
+        } ]
+      }
+    } ]
+  },
+  "languageCode": "en"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "3c774adc-3ce7-4bc6-a882-f0e136cba181",
+  "displayName": "dmv_renew_tool",
+  "description": "Tool for renew drivers license.",
+  "openApiSpec": {
+  
+  },
+  "schemas": [ "Address", "DriversLicenseParameters" ],
+  "toolType": "CUSTOMIZED_TOOL"
+}
