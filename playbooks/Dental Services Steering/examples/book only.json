@@ -24,7 +24,15 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Is there anything else I can help with?"
+      "text": "Thank you, please confirm your name."
+    }
+  }, {
+    "userUtterance": {
+      "text": "Armands"
+    }
+  },{
+    "agentUtterance": {
+      "text": "Thank you. Is there anything else I can help with?"
     }
   }, {
     "userUtterance": {
