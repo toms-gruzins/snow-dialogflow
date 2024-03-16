@@ -1,65 +1,6 @@
 {
   "name": "d813e8ba-d6c9-49c8-ad78-39515bebc1ff",
   "actions": [ {
-    "agentUtterance": {
-      "text": "I can help you book an appointment. Could you provide me with an address so that I can search for nearby DMV offices for you?"
-    }
-  }, {
-    "userUtterance": {
-      "text": "Yes, it's 873 Blossom hills ave, San Jose, 95123."
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "get_nearby_dmv_offices",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-          "address": "873 Blossom hills ave, San Jose, 95123"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "nearby_dmv_offices": [ {
-            "address": "3665 Flora Vista Ave, Santa Clara, CA 95051",
-            "name": "Santa Clara DMV"
-          }, {
-            "address": "1500 Sullivan Ave, Daly City, CA 94015",
-            "name": "Daly City DMV"
-          }, {
-            "address": "6300 W Las Positas Blvd, Pleasanton, CA 94588",
-            "name": "Pleasanton DMV"
-          } ]
-        }
-      } ]
-    }
-  }, {
-    "agentUtterance": {
-      "text": "Thank you. I have found the following nearby DMV offices for you. Please tell me which one you'd like to visit.\nSanta Clara DMV: 3665 Flora Vista Ave, Santa Clara, CA 95051\nDaly City DMV: 1500 Sullivan Ave, Daly City, CA 94015\nPleasanton DMV: 6300 W Las Positas Blvd, Pleasanton, CA 94588"
-    }
-  }, {
-    "userUtterance": {
-      "text": "The Daly City one"
-    }
-  }, {
-    "toolUse": {
-      "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
-      "action": "select_dmv_office",
-      "inputParameters": [ {
-        "name": "request",
-        "value": {
-          "dmv_office_name": "Daly City DMV"
-        }
-      } ],
-      "outputParameters": [ {
-        "name": "response",
-        "value": {
-          "verify_result": "SUCCESS"
-        }
-      } ]
-    }
-  }, {
     "toolUse": {
       "tool": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/tools/e4796839-fe96-4610-907d-280968269629",
       "action": "suggest_appointment_date",
