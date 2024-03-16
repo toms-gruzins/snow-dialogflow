@@ -6,17 +6,17 @@
     }
   }, {
     "agentUtterance": {
-      "text": "Hi, I'm your DMV assistant. I can help you renew your driver's license online and book an appointment at a DMV field office. How can I help you today?"
+      "text": "Hi, I'm your Dentist assistant. I can help you to book, cancel, edit an appointment. How can I help you today?"
     }
   }, {
     "userUtterance": {
-      "text": "I want to book an appointment at field office."
+      "text": "I want to book an appointment."
     }
   }, {
     "playbookInvocation": {
       "playbook": "projects/support-now-417017/locations/global/agents/1549e96f-1af8-4209-bdd8-9729b0a95f01/playbooks/97ca2916-37eb-47c8-8b58-d4857f437cd5",
       "playbookInput": {
-        "precedingConversationSummary": "Customer wants to book an appointment at field office."
+        "precedingConversationSummary": "Customer wants to book an appointment."
       },
       "playbookOutput": {
         "executionSummary": "Customer booked an appointment."
