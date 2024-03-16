@@ -11,7 +11,7 @@
         "precedingConversationSummary": "User asks about costs for booking an appointment."
       },
       "playbookOutput": {
-        "executionSummary": "Agent refers the user to their local DMV website for more information on fees and services."
+        "executionSummary": "Agent refers the user to their dentist website for more information on fees and services."
       }
     }
   }, {
