@@ -2,7 +2,7 @@
   "name": "361368cf-0478-4e31-b8f0-7040db70d760",
   "actions": [{
     "agentUtterance": {
-      "text": "What date would you like to make an appointment for? I have the following available:\n1. March 21st\n2. March 22nd\nIf none of these dates work for you, you can also tell me another date you'd prefer."
+      "text": "What date would you like to make an appointment for? I have the following available:\nMarch 18 or March 19\nIf none of these dates work for you, you can also tell me another date you'd prefer."
     }
   }, {
     "userUtterance": {
